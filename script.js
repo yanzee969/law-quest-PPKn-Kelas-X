@@ -10,7 +10,7 @@ return{get:()=>s||load(),save,reset(){s=def();save();}};})();
 
 /* ===== interaction ===== */
 /* Helper DOM aman (tanpa innerHTML), komponen avatar, toast. Ubah path avatar di CONFIG. */
-const CONFIG={avatars:{guide:'assets/avatars/guide.png',a1:'assets/avatars/avatar-1.png',a2:'assets/avatars/avatar-2.png',a3:'assets/avatars/avatar-3.png'}};
+const CONFIG={avatars:{guide:'guide.png',a1:'assets/avatars/avatar-1.png',a2:'assets/avatars/avatar-2.png',a3:'assets/avatars/avatar-3.png'}};
 function el(t,a={},...c){const e=document.createElement(t);for(const k in a){if(k==='class')e.className=a[k];else if(k.startsWith('on'))e.addEventListener(k.slice(2),a[k]);else e.setAttribute(k,a[k]);}
 c.flat().forEach(x=>{if(x!==null&&x!==false&&x!==undefined)e.append(x instanceof Node?x:document.createTextNode(x));});return e;}
 function avatar(key='guide',cls=''){const w=el('div',{class:'avatar '+cls}),i=el('img',{src:CONFIG.avatars[key],alt:'Pemandu'});
