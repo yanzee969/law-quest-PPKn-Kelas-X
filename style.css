@@ -1,0 +1,66 @@
+:root{--ink:#101a33;--navy:#0a1630;--navy2:#16295a;--blue:#2f6bff;--cyan:#3de0ff;--orange:#ff8a2b;--sun:#ffd24a;--bg:#e8f7ff;--card:#fff;--mut:#4a5877;--ok:#12a574;--no:#e04a41;--r:16px;--sh:4px 4px 0 var(--ink);--bd:2.5px solid var(--ink)}
+*{box-sizing:border-box}[hidden]{display:none!important}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.65 "Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--bg) radial-gradient(#b9e4f7 1.4px,transparent 1.6px) 0 0/22px 22px}
+h1,h2,h3{font-family:"Fredoka","Baloo 2","Trebuchet MS",system-ui,sans-serif;font-weight:600;line-height:1.15;margin:.2em 0 .5em;letter-spacing:.2px}h1{font-size:clamp(2.1rem,5.4vw,3.5rem)}h2{font-size:1.7rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:99;border:var(--bd)}
+.top{display:none}
+.shell{display:grid;grid-template-columns:248px 1fr;min-height:100vh}
+nav{background:var(--navy);border-right:var(--bd);padding:20px 14px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:6px}
+nav .brand{color:#fff;font:600 1.5rem "Fredoka",Georgia,sans-serif;padding:6px 12px 18px}nav .brand i{color:var(--sun);font-style:normal}
+nav a{color:#d3defa;text-decoration:none;padding:10px 14px;border-radius:12px;border:2px solid transparent;font-weight:600}
+nav a:hover{background:var(--navy2)}
+nav a[aria-current=page]{background:var(--sun);color:var(--ink);border-color:var(--ink);box-shadow:3px 3px 0 var(--cyan)}
+main{padding:28px clamp(16px,4vw,44px) 60px;max-width:1020px;width:100%}main:focus{outline:none}
+a:focus-visible,button:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.muted{color:var(--mut)}
+.card{background:var(--card);border-radius:var(--r);padding:18px 20px;border:var(--bd);box-shadow:var(--sh)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn,.opt,.tab{font:inherit;cursor:pointer;border-radius:12px;border:var(--bd);background:#fff;color:var(--ink);padding:10px 18px;min-height:46px;box-shadow:0 4px 0 var(--ink);transition:transform .08s,box-shadow .08s}
+.btn:active,.opt:active,.tab:active{transform:translateY(4px);box-shadow:0 0 0 var(--ink)}
+.btn{background:var(--orange);font-weight:700;text-decoration:none;display:inline-flex;align-items:center}.btn:hover{background:#ff9d4d}
+.btn.alt{background:#fff}.btn.alt:hover{background:var(--sun)}.btn.danger{background:var(--no);color:#fff}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:0 4px 0 var(--ink)}
+.hero{position:relative;background:var(--navy);color:#fff;border:var(--bd);border-radius:22px;box-shadow:6px 6px 0 var(--ink);padding:clamp(22px,4vw,44px);display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;margin:8px 0 22px;overflow:visible;background-image:radial-gradient(circle at 85% 20%,#2a4ba855,transparent 45%)}
+.hero h1{color:#fff}.hero p{color:#d3defa;max-width:46ch}
+.hero .btn.alt{color:var(--ink)}
+.avatar{width:120px;aspect-ratio:1;flex:none}.avatar img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 6px 0 rgba(16,26,51,.35))}
+.hero .avatar{width:min(240px,30vw);position:relative;margin-top:34px}
+.hero .avatar::before{content:"Siap mulai misi?";position:absolute;right:50%;bottom:calc(100% + 6px);transform:translateX(30%);white-space:nowrap;background:var(--sun);color:var(--ink);font:600 .95rem "Fredoka",sans-serif;padding:6px 14px;border:var(--bd);border-radius:14px;box-shadow:3px 3px 0 var(--ink)}
+.hero .avatar::after{content:"";position:absolute;left:46%;bottom:calc(100% - 2px);width:14px;height:14px;background:var(--sun);border:var(--bd);border-top:0;border-left:0;transform:rotate(45deg) translateY(-6px)}
+.avatar.ph{border:3px dashed #6c86c9;border-radius:16px;display:grid;place-items:center;background:rgba(255,255,255,.08)}.avatar.ph::before,.avatar.ph::after{display:none}.avatar.ph::after{content:none}
+.avatar.sm{width:68px}.avatar.sm img{filter:none}
+.guide{display:flex;gap:14px;align-items:center;background:var(--sun);border:var(--bd);border-radius:20px 20px 20px 6px;box-shadow:var(--sh);padding:10px 18px;margin:16px 0}.guide p{margin:0;font-weight:600}
+.bar{height:16px;background:#fff;border:var(--bd);border-radius:12px;overflow:hidden}
+.bar i{display:block;height:100%;background:repeating-linear-gradient(-45deg,var(--cyan) 0 10px,#7aeaff 10px 20px);box-shadow:0 0 12px var(--cyan);transition:width .6s cubic-bezier(.3,1.4,.5,1)}
+.chip{background:var(--sun);color:var(--ink);border:2px solid var(--ink);border-radius:20px;padding:2px 14px;font-weight:700;box-shadow:2px 2px 0 var(--ink)}
+.stat b{font:600 2.1rem "Fredoka",sans-serif;display:block;color:var(--blue)}
+.badge{opacity:.5;filter:grayscale(.8);border-style:dashed;box-shadow:none}
+.badge.on{opacity:1;filter:none;border-style:solid;background:#fff6d1;box-shadow:var(--sh);border-color:var(--ink)}
+.st{font-size:.85rem;font-weight:700;padding:2px 12px;border-radius:20px;background:#e3e8f4;border:2px solid var(--ink)}.st.done{background:#7fe6bb}.st.prog{background:var(--sun)}.st.lock{background:#dfe5f1;color:#556081}
+.node{display:flex;gap:14px;align-items:center;justify-content:space-between;text-decoration:none;color:inherit;margin:0 0 22px 22px;position:relative}
+.node::before{content:"";position:absolute;left:-22px;top:50%;width:22px;border-top:4px dotted var(--ink)}
+.node:not(.lock):hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.node.lock{background:#f1f4fa;border-style:dashed;box-shadow:none;color:#4a5877}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}.tab{padding:8px 16px;min-height:44px}.tab[aria-selected=true]{background:var(--blue);color:#fff}.tab:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+details{background:#fff;border:var(--bd);border-radius:14px;padding:10px 16px;margin:10px 0;box-shadow:3px 3px 0 var(--ink)}details[open]{background:#f2fbff}summary{cursor:pointer;font-weight:700}
+ul.pts{padding-left:22px}ul.pts li{margin:6px 0}
+.opt{display:block;width:100%;text-align:left;margin:12px 0;font-weight:600}.opt:hover:not(:disabled){background:#f2fbff}
+.opt.ok{background:#8ef0c8;animation:pop .3s}.opt.no{background:#ffb4ae;animation:shake .35s}
+@keyframes pop{50%{transform:scale(1.03)}}@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.fb{background:#fff4c2;border:var(--bd);border-radius:14px;padding:10px 16px;margin:12px 0}
+textarea{width:100%;min-height:120px;font:inherit;padding:12px;border-radius:14px;border:var(--bd);background:#fff}
+#toast{position:fixed;right:16px;bottom:16px;background:var(--sun);color:var(--ink);font-weight:700;padding:10px 18px;border:var(--bd);border-radius:14px;box-shadow:var(--sh);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s;max-width:80vw;z-index:50}#toast.show{opacity:1;transform:none}
+.tbl{overflow-x:auto;margin:14px 0;border-radius:12px;border:var(--bd);box-shadow:3px 3px 0 var(--ink);background:#fff}.tbl:focus-visible{outline:3px solid var(--blue)}
+.tbl table{border-collapse:collapse;width:100%;min-width:520px;font-size:.95rem}
+.tbl caption{caption-side:top;text-align:left;font-weight:700;padding:8px 10px}
+.tbl th,.tbl td{border:1px solid #c9d6ee;padding:8px 10px;text-align:left;vertical-align:top}
+.tbl thead th{background:var(--navy);color:#fff}.tbl tbody th{background:#eef7ff;font-weight:700}
+ol.flow{list-style:none;padding:0;margin:16px 0;display:grid;gap:24px}
+ol.flow li{background:#fff;border:var(--bd);border-radius:12px;box-shadow:3px 3px 0 var(--ink);padding:10px 16px;position:relative}
+ol.flow li:not(:last-child)::after{content:"\2193";position:absolute;left:50%;bottom:-24px;transform:translateX(-50%);color:var(--ink);font-weight:800}
+.hero .avatar{animation:fl 4s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-8px)}}
+@media print{nav,.top,.btn,#toast{display:none!important}.shell{display:block}.tbl{overflow:visible}body{background:#fff}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+@media(max-width:800px){.shell{grid-template-columns:1fr}
+.top{display:flex;align-items:center;justify-content:space-between;background:var(--navy);color:#fff;padding:10px 14px;position:sticky;top:0;z-index:20;border-bottom:var(--bd)}.top button{min-height:44px;padding:0 14px;border-radius:10px;border:2px solid #8fa6dd;background:none;color:#fff;font:inherit}.logo{font-family:"Fredoka",sans-serif;font-size:1.2rem}
+nav{position:fixed;inset:68px 0 0 0;height:auto;z-index:19;transform:translateX(-100%);visibility:hidden;overflow-y:auto;transition:transform .25s,visibility .25s}nav.open{transform:none;visibility:visible}nav .brand{display:none}
+.hero{grid-template-columns:1fr}.hero .avatar{display:none}.node{margin-left:16px}.node::before{left:-16px;width:16px}}
